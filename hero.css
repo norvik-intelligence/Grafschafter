@@ -6,19 +6,25 @@
   position: relative;
   isolation: isolate;
   background: #123a27 url("assets/grafschafter-hero.png") center center / contain no-repeat;
+  padding-top: 175px;
 }
 
-.hero::before {
-  content: "";
+.topbar {
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, rgba(16, 45, 31, .92) 0%, rgba(16, 45, 31, .76) 39%, rgba(16, 45, 31, .16) 72%, rgba(16, 45, 31, .04) 100%);
+  inset: 0 0 auto;
+  width: 100%;
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, .38);
+  color: #fff;
 }
 
+.topbar .brand, .topbar nav a, .topbar .menu-toggle { color: #fff; }
+.topbar .brand-mark { background: #fff; color: #123a27; }
+.topbar .button-small { background: rgba(18, 58, 39, .78); border: 1px solid rgba(255,255,255,.4); }
 .hero-copy { max-width: 680px; color: #fff; }
 .hero .eyebrow span { border-color: #dbe8bd; }
 .hero h1 { max-width: 660px; }
+.hero h1, .hero .lead, .hero .eyebrow, .hero .trust-row { text-shadow: 0 2px 12px rgba(12, 28, 20, .45); }
 .hero .lead { color: #f0f4ed; max-width: 590px; }
 .hero .button { background: #dbe8bd; color: #123a27; }
 .hero .text-link { color: #fff; border-color: #fff; }
@@ -27,6 +33,6 @@
 .hero-art { display: none; }
 
 @media (max-width: 650px) {
-  .hero { min-height: 650px; aspect-ratio: auto; background-size: contain; background-position: center top; }
-  .hero::before { background: linear-gradient(90deg, rgba(16, 45, 31, .92), rgba(16, 45, 31, .60)); }
+  .hero { min-height: 650px; aspect-ratio: auto; background-size: contain; background-position: center top; padding-top: 135px; }
+  .topbar { background: rgba(18, 58, 39, .28); }
 }
