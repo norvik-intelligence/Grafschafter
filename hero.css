@@ -1,0 +1,31 @@
+/* Full-width photographic hero: preserves readable contrast over the supplied image. */
+.hero {
+  display: block;
+  min-height: 680px;
+  position: relative;
+  isolation: isolate;
+  background: url("assets/grafschafter-hero.png") center 42% / cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(16, 45, 31, .92) 0%, rgba(16, 45, 31, .76) 39%, rgba(16, 45, 31, .16) 72%, rgba(16, 45, 31, .04) 100%);
+}
+
+.hero-copy { max-width: 680px; color: #fff; }
+.hero .eyebrow span { border-color: #dbe8bd; }
+.hero h1 { max-width: 660px; }
+.hero .lead { color: #f0f4ed; max-width: 590px; }
+.hero .button { background: #dbe8bd; color: #123a27; }
+.hero .text-link { color: #fff; border-color: #fff; }
+.hero .trust-row p { color: #f6f8f4; }
+.hero .trust-avatars b { border-color: #345342; }
+.hero-art { display: none; }
+
+@media (max-width: 650px) {
+  .hero { min-height: 650px; background-position: 61% center; }
+  .hero::before { background: linear-gradient(90deg, rgba(16, 45, 31, .92), rgba(16, 45, 31, .60)); }
+}
