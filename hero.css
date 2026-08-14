@@ -1,24 +1,21 @@
 /* Full-width photographic hero: preserves readable contrast over the supplied image. */
 .hero {
   display: block;
-  min-height: 0;
+  height: 1100px !important;
+  min-height: 1100px !important;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 0 !important;
-  line-height: 0;
-  background: transparent !important;
+  padding: 178px max(5vw, 40px) 100px !important;
+  line-height: normal;
+  background-color: #6e929a;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 .hero-background {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: auto;
-  min-height: 860px;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
+  display: none !important;
 }
 
 .topbar {
@@ -36,10 +33,8 @@
 .topbar .brand-mark { background: #fff; color: #123a27; }
 .topbar .button-small { background: rgba(18, 58, 39, .78); border: 1px solid rgba(255,255,255,.4); }
 .hero-copy {
-  position: absolute;
+  position: relative;
   z-index: 3;
-  top: 178px;
-  left: max(5vw, 40px);
   max-width: 680px;
   color: #fff;
   line-height: 1.5;
@@ -66,7 +61,7 @@
 .hero-art { display: none; }
 
 @media (max-width: 650px) {
-  .hero-background { height: 720px; min-height: 720px; object-position: 58% center; }
-  .hero-copy { top: 128px; left: 23px; right: 23px; }
+  .hero { height: 720px !important; min-height: 720px !important; padding: 135px 23px 60px !important; background-position: 58% center !important; }
+  .hero-copy { left: auto; right: auto; }
   .topbar { background: rgba(18, 58, 39, .28); }
 }
