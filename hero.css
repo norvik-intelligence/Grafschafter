@@ -1,67 +1,77 @@
-/* Full-width photographic hero: preserves readable contrast over the supplied image. */
+/* The photo is a real full-size media layer, not a CSS background.
+   This rules out any colour from a parent showing underneath the image. */
 .hero {
-  display: block;
-  height: 1100px !important;
-  min-height: 1100px !important;
   position: relative;
-  isolation: isolate;
+  display: block;
+  height: 980px;
+  min-height: 980px;
+  padding: 0;
   overflow: hidden;
-  padding: 178px max(5vw, 40px) 100px !important;
-  line-height: normal;
-  background-color: #6e929a;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+  isolation: isolate;
+  background: transparent;
 }
 
-.hero-background {
-  display: none !important;
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .topbar {
   position: absolute;
   inset: 0 0 auto;
-  width: 100%;
   z-index: 20;
-  background: transparent !important;
-  background-color: transparent !important;
+  width: 100%;
+  background: transparent;
   border-bottom-color: rgba(255, 255, 255, .38);
   color: #fff;
 }
 
-.topbar .brand, .topbar nav a, .topbar .menu-toggle { color: #fff; }
+.topbar .brand,
+.topbar nav a,
+.topbar .menu-toggle { color: #fff; }
 .topbar .brand-mark { background: #fff; color: #123a27; }
 .topbar .button-small { background: rgba(18, 58, 39, .78); border: 1px solid rgba(255,255,255,.4); }
+
 .hero-copy {
-  position: relative;
-  z-index: 3;
+  position: absolute;
+  z-index: 1;
+  top: 178px;
+  left: max(5vw, 40px);
   max-width: 680px;
   color: #fff;
   line-height: 1.5;
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
-.hero::before,
-.hero::after,
-.hero-copy::before,
-.hero-copy::after {
-  content: none !important;
-  display: none !important;
-}
 .hero .eyebrow span { border-color: #dbe8bd; }
 .hero h1 { max-width: 660px; }
-.hero h1, .hero .lead, .hero .eyebrow, .hero .trust-row { text-shadow: 0 2px 12px rgba(12, 28, 20, .45); }
+.hero h1,
+.hero .lead,
+.hero .eyebrow,
+.hero .trust-row { text-shadow: 0 2px 12px rgba(12, 28, 20, .45); }
 .hero .lead { color: #f0f4ed; max-width: 590px; }
 .hero .button { background: #dbe8bd; color: #123a27; }
 .hero .text-link { color: #fff; border-color: #fff; }
 .hero .trust-row p { color: #f6f8f4; }
 .hero .trust-avatars b { border-color: #345342; }
-.hero-art { display: none; }
 
 @media (max-width: 650px) {
-  .hero { height: 720px !important; min-height: 720px !important; padding: 135px 23px 60px !important; background-position: 58% center !important; }
-  .hero-copy { left: auto; right: auto; }
-  .topbar { background: rgba(18, 58, 39, .28); }
+  .hero { height: 760px; min-height: 760px; }
+  .hero-media img { object-position: 58% center; }
+  .hero-copy { top: 125px; left: 23px; right: 23px; }
+  .topbar { background: rgba(18, 58, 39, .18); }
 }
