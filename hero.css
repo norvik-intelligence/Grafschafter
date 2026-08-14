@@ -1,10 +1,11 @@
 /* Full-width photographic hero: preserves readable contrast over the supplied image. */
 .hero {
   display: block;
-  min-height: 680px;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
   position: relative;
   isolation: isolate;
-  background: url("assets/grafschafter-hero.png") center 42% / cover no-repeat;
+  background: #123a27 url("assets/grafschafter-hero.png") center center / contain no-repeat;
 }
 
 .hero::before {
@@ -26,6 +27,6 @@
 .hero-art { display: none; }
 
 @media (max-width: 650px) {
-  .hero { min-height: 650px; background-position: 61% center; }
+  .hero { min-height: 650px; aspect-ratio: auto; background-size: contain; background-position: center top; }
   .hero::before { background: linear-gradient(90deg, rgba(16, 45, 31, .92), rgba(16, 45, 31, .60)); }
 }
