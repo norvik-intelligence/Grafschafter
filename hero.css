@@ -28,6 +28,22 @@
   object-position: center center;
 }
 
+/* Subtle contrast layer only where the white copy sits. */
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 34, 23, .52) 0%,
+    rgba(8, 34, 23, .30) 42%,
+    rgba(8, 34, 23, .08) 62%,
+    rgba(8, 34, 23, 0) 78%
+  );
+}
+
 .topbar {
   position: absolute;
   inset: 0 0 auto;
@@ -46,7 +62,7 @@
 
 .hero-copy {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 178px;
   left: max(5vw, 40px);
   max-width: 680px;
