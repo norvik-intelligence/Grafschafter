@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Brand() {
-  return <Link className="brand" href="/#start" aria-label="Grafschafter Alltagsservice Startseite"><span className="brand-mark">g</span><span>Grafschafter<br /><em>Alltagsservice</em></span></Link>;
+  return (
+    <Link className="brand" href="/#start" aria-label="Grafschafter Alltagsservice Startseite">
+      <Image className="brand-logo" src="/assets/grafschafter-logo.webp" alt="Grafschafter Alltagsservice" width={1536} height={512} priority />
+    </Link>
+  );
 }
 
 export default function Topbar() {
