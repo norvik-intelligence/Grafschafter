@@ -1,0 +1,2 @@
+import Hero from "@/components/Hero";import IntroBand from "@/components/IntroBand";import Services from "@/components/Services";import About from "@/components/About";import Quality from "@/components/Quality";import Funding from "@/components/Funding";import Contact from "@/components/Contact";
+export default function Home(){return <main id="start"><Hero /><IntroBand /><Services /><About /><Quality /><Funding /><Contact /></main>;}
