@@ -1,35 +1,4 @@
 "use client";
-
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
-export function Brand() {
-  return (
-    <Link className="brand" href="/#start" aria-label="Grafschafter Alltagsservice Startseite">
-      <Image className="brand-logo" src="/assets/grafschafter-logo.webp" alt="Grafschafter Alltagsservice" width={1536} height={512} priority />
-    </Link>
-  );
-}
-
-export default function Topbar() {
-  const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
-  return (
-    <>
-      <div className="trustbar">Persönliche Alltagsbegleitung &amp; Betreuung in Moers und im Kreis Wesel</div>
-      <header className={`topbar${open ? " open" : ""}`}>
-        <Brand />
-        <button className="menu-toggle" type="button" aria-label={open ? "Menü schließen" : "Menü öffnen"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? "Schließen" : "Menü"}</button>
-        <nav aria-label="Hauptnavigation">
-          <a href="/#leistungen" onClick={close}>Leistungen</a>
-          <a href="/#ueber-uns" onClick={close}>Über uns</a>
-          <a href="/#qualitaet" onClick={close}>Qualität</a>
-          <a href="/#kosten" onClick={close}>Kosten &amp; Abrechnung</a>
-          <a href="/#kontakt" onClick={close}>Kontakt</a>
-        </nav>
-        <a className="button button-small" href="/#kontakt">Erstgespräch <span>↗</span></a>
-      </header>
-    </>
-  );
-}
+import {useState} from "react";import Image from "next/image";import Link from "next/link";
+export function Brand(){return <Link className="brand" href="/#start" aria-label="Grafschafter Alltagsservice Startseite"><Image className="brand-logo" src="/assets/grafschafter-logo.webp" alt="Grafschafter Alltagsservice" width={1536} height={512} priority /></Link>}
+export default function Topbar(){const[open,setOpen]=useState(false);const close=()=>setOpen(false);return <><div className="trustbar">Anerkannte Alltagsbegleitung nach §§ 43b, 53b &amp; 45b SGB XI in Moers &amp; Umgebung</div><header className={`topbar${open?" open":""}`}><div className="header-main"><Brand/><a className="button button-small" href="/#kontakt">Erstgespräch</a><button className="menu-toggle" type="button" aria-label={open?"Menü schließen":"Menü öffnen"} aria-expanded={open} onClick={()=>setOpen(!open)}><span></span><span></span><span></span></button></div><nav aria-label="Hauptnavigation"><a href="/#ueber-uns" onClick={close}>Über uns</a><a href="/#leistungen" onClick={close}>Leistungen</a><a href="/#kosten" onClick={close}>Kosten &amp; Pflegekasse</a><a href="/#qualitaet" onClick={close}>FAQ</a><a href="/#kontakt" onClick={close}>Kontakt</a></nav></header></>}
