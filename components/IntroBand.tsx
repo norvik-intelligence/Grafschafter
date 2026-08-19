@@ -1,1 +1,1 @@
-export default function IntroBand(){return <section className="intro-band"><p>Mit Herz vor Ort.</p><p>Unterstützung, die in Ihren Alltag passt.</p><p>Seit 2026 in Moers.</p></section>;}
+export default function IntroBand(){return <section className="intro-band" aria-label="Unser Versprechen"><p><strong>Persönlich.</strong> Feste Ansprechpartner und kurze Wege.</p><p><strong>Alltagsnah.</strong> Unterstützung, die zu Ihrem Leben passt.</p><p><strong>Verlässlich.</strong> Klare Absprachen und fachliche Standards.</p></section>;}
