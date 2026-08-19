@@ -1,9 +1,9 @@
 export const site = {
   name: "Grafschafter Alltagsservice",
   description: "Zertifizierte Alltagsbegleitung, Betreuung und hauswirtschaftliche Unterstützung in Moers und im Kreis Wesel.",
-  url: "https://grafschafter.vercel.app",
+  url: "https://www.grafschafter-alltagsservice.de",
   owner: "Sokayna Malki",
-  streetAddress: "Lippestraße {{ HAUSNUMMER }}",
+  streetAddress: "Lippestraße 9L",
   postalCode: "47443",
   locality: "Moers",
   phone: "+49 (0) 2841 000 000",
